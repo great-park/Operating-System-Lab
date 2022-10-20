@@ -7,7 +7,7 @@ int sum; /* global data shared by the thread(s) */
 void *runner(void *param); /* threads call this function */
 
 int main(int argc, char *argv[]) { /* a single thread(parent) of control begins */
-	pthread_ t workers[NUM_THREADS]; /* the thread identifier */
+	pthread_t workers[NUM_THREADS]; /* the thread identifier */
 	pthread_attr_t attr; /* set of thread attributes */
 
 	pthread_attr_init(&attr); /* set the default attributes of the thread */
