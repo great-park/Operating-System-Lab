@@ -35,7 +35,7 @@ void FCFS( int processes[], int n, int burst_time[]) {
         total_waitingTime = total_waitingTime + waitingTime[i];
         printf(" P%d \t\t %d \t\t %d \n", (i+1), burst_time[i], waitingTime[i]);
     }
-    int avgWaitingTime = (float)total_waitingTime / (float)n;
+    float avgWaitingTime = (float)total_waitingTime / (float)n;
     
     printf("\n Average waiting time = %dms \n", avgWaitingTime);
     printf("\n Gantt chart \n");
