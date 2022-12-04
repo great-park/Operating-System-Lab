@@ -30,9 +30,10 @@ void printLine(int n) {
 		printf("-");
 	}
 }
-void printGanttChart(int n, int burst_time[]) {
+void printGanttChart(int n, int burst_time[], int quantum) {
 	printLine(125);
     printf("\n");
+    // To do: use quantum
     for (int i = 0; i < n; i++) {
     	printf("| [P%d: %d]", (i+1), burst_time[i]);
     	for (int j = 0; j < burst_time[i] - 1; j++) {
@@ -57,7 +58,7 @@ void RR(int processes[], int n, int burst_time[], int quantum) {
     int avgWaitingTime = (float)total_waitingTime / (float)n;
     printf("\n Average waiting time = %dms \n", avgWaitingTime);
 	printf("\n Gantt chart \n");
-    printGanttChart(n, burst_time);
+    printGanttChart(n, burst_time, quantum);
 	printf("\n\n"); 
 } 
 int giveBurstTime(int depth) {
